@@ -59,13 +59,30 @@ public class Sortingalgorithms {
                 }
             }
         }
+        return arr;
+    }
 
+
+    public static int[] insertionSort(int[] arr) {
+        for (int i = 1; i < arr.length; i++) {
+            int temp = arr[i];
+            int j;
+            for (j = i - 1; j >= 0 && temp < arr[j]; j--) {
+                arr[j + 1] = arr[j];
+            }
+            arr[j + 1] = temp;
+            for (int num : arr) {
+                System.out.print(num);
+                System.out.print(", ");
+            }
+            System.out.println("");
+        }
         return arr;
     }
 
     public static void main(String[] args) {
         int[] arr1 = {10, 34, 2, 8, 44, 1};
-        int[] arr2 = bubbleSort(arr1);
+        int[] arr2 = insertionSort(arr1);
         for (int i : arr2) {
             System.out.print(i);
             System.out.print(", ");
